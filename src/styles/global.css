@@ -1,0 +1,85 @@
+/* ===== CSS RESET & VARIABLES ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  /* Princess Mode (default) */
+  --bg-primary: #fff0f5;
+  --bg-secondary: #fdf2f8;
+  --bg-card: rgba(255,255,255,0.45);
+  --text-primary: #7c3a5e;
+  --text-secondary: #a0567a;
+  --accent: #e8a0bf;
+  --accent2: #c9b1ff;
+  --accent3: #b8e6d0;
+  --glow: rgba(232,160,191,0.5);
+  --border: rgba(232,160,191,0.35);
+  --btn-bg: linear-gradient(135deg, #f7c8d9, #c9b1ff);
+  --btn-text: #5a2d4a;
+  --heading-font: 'Cinzel Decorative', serif;
+  --body-font: 'Quicksand', sans-serif;
+  --cursor: default;
+  --card-shadow: 0 8px 32px rgba(232,160,191,0.25);
+  --scanline-opacity: 0;
+  --neon-glow: none;
+  --flip-bg: #fff5f9;
+  --flip-text: #7c3a5e;
+  --flip-border: rgba(232,160,191,0.4);
+  --input-bg: rgba(255,255,255,0.7);
+  --input-border: rgba(232,160,191,0.5);
+  --progress-fill: linear-gradient(90deg, #f7c8d9, #c9b1ff, #b8e6d0);
+  --todo-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='32'%3E%3Cline x1='0' y1='31' x2='100' y2='31' stroke='%23e8a0bf44' stroke-width='1'/%3E%3C/svg%3E");
+  --transition-speed: 0.6s;
+}
+
+.ryuu-mode {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: rgba(17,17,24,0.75);
+  --text-primary: #e0e0ff;
+  --text-secondary: #9090b0;
+  --accent: #00d4ff;
+  --accent2: #ff6a00;
+  --accent3: #ff2255;
+  --glow: rgba(0,212,255,0.4);
+  --border: rgba(0,212,255,0.3);
+  --btn-bg: linear-gradient(135deg, #00d4ff, #0066ff);
+  --btn-text: #000;
+  --heading-font: 'Orbitron', sans-serif;
+  --body-font: 'Rajdhani', sans-serif;
+  --cursor: crosshair;
+  --card-shadow: 0 0 30px rgba(0,212,255,0.2), 0 0 60px rgba(0,212,255,0.05);
+  --scanline-opacity: 0.03;
+  --neon-glow: 0 0 10px rgba(0,212,255,0.5), 0 0 20px rgba(0,212,255,0.2);
+  --flip-bg: #0d0d18;
+  --flip-text: #00d4ff;
+  --flip-border: rgba(0,212,255,0.35);
+  --input-bg: rgba(17,17,24,0.8);
+  --input-border: rgba(0,212,255,0.4);
+  --progress-fill: linear-gradient(90deg, #00d4ff, #0066ff, #ff6a00);
+  --todo-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='32'%3E%3Cline x1='0' y1='31' x2='100' y2='31' stroke='%2300d4ff18' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body-font);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  cursor: var(--cursor);
+  transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+/* Force all inputs/textareas to inherit theme colors */
+input, textarea, select, button {
+  color: var(--text-primary);
+  font-family: var(--body-font);
+}
+input::placeholder, textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Utility */
+.hidden { display: none !important; }

@@ -1,0 +1,69 @@
+.comments-section {
+  padding: 28px; border-radius: 24px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
+  opacity: 0; transition: opacity 0.8s 0.8s, background 0.6s, border-color 0.6s;
+}
+.comments-section.revealed { opacity: 1; }
+
+.comments-title {
+  font-family: var(--heading-font); font-size: 1.2rem;
+  text-align: center; margin-bottom: 18px; color: var(--text-primary);
+}
+
+.comment-form {
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;
+}
+.comment-form input, .comment-form textarea {
+  padding: 12px 16px; border-radius: 14px;
+  border: 1.5px solid var(--input-border); background: var(--input-bg);
+  color: var(--text-primary) !important; font-family: var(--body-font); font-size: 0.9rem;
+  resize: none; transition: all 0.3s;
+  -webkit-text-fill-color: var(--text-primary);
+}
+.comment-form input::placeholder, .comment-form textarea::placeholder {
+  color: var(--text-secondary) !important;
+  -webkit-text-fill-color: var(--text-secondary);
+  opacity: 0.7;
+}
+.comment-form input:focus, .comment-form textarea:focus {
+  outline: none; border-color: var(--accent); box-shadow: 0 0 15px var(--glow);
+}
+.comment-form textarea { min-height: 80px; }
+
+.comment-submit-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+}
+.submit-btn {
+  padding: 12px 32px; border: none; border-radius: 16px;
+  background: var(--btn-bg); color: var(--btn-text);
+  font-family: var(--body-font); font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: all 0.3s;
+}
+.submit-btn:hover { transform: scale(1.05); box-shadow: 0 4px 20px var(--glow); }
+
+.like-wrap { display: flex; align-items: center; gap: 8px; }
+.like-btn {
+  background: none; border: none; font-size: 1.6rem; cursor: pointer;
+  transition: transform 0.3s;
+}
+.like-btn:hover { transform: scale(1.2); }
+.like-btn.bouncing { animation: heartBounce 0.4s; }
+@keyframes heartBounce {
+  0% { transform: scale(1); } 40% { transform: scale(1.4); } 100% { transform: scale(1); }
+}
+.like-count { font-family: var(--heading-font); font-size: 1rem; color: var(--accent); }
+
+.submit-msg {
+  text-align: center; margin-top: 10px; font-size: 0.9rem;
+  color: var(--accent); opacity: 0; transition: opacity 0.4s;
+}
+.submit-msg.show { opacity: 1; }
+
+@media (max-width: 600px) {
+  .comments-section { padding: 18px 14px; }
+  .submit-btn { padding: 10px 22px; font-size: 0.85rem; }
+  .comment-submit-row { justify-content: center; }
+}

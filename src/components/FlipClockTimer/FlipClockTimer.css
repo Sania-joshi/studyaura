@@ -1,0 +1,101 @@
+.flip-clock-timer { width: 100%; }
+
+.timer-mode-toggle {
+  display: flex; justify-content: center; gap: 8px;
+  margin-bottom: 18px; flex-wrap: wrap;
+}
+.mode-btn {
+  padding: 8px 20px; border: 1.5px solid var(--border); border-radius: 20px;
+  background: transparent; color: var(--text-secondary);
+  font-family: var(--body-font); font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all 0.3s;
+}
+.mode-btn.active {
+  background: var(--btn-bg); color: var(--btn-text); border-color: var(--accent);
+}
+
+.flip-clock {
+  display: flex; align-items: center; justify-content: center;
+  gap: 6px; margin-bottom: 18px; flex-wrap: wrap;
+}
+.flip-digit-wrap {
+  position: relative; width: 52px; height: 72px; perspective: 300px;
+}
+.flip-digit {
+  width: 100%; height: 100%; position: relative;
+  background: var(--flip-bg); border-radius: 10px;
+  border: 1px solid var(--flip-border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--heading-font); font-size: 2rem; font-weight: 700;
+  color: var(--flip-text);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: background 0.6s, color 0.6s, border-color 0.6s;
+}
+.flip-digit::after {
+  content: ''; position: absolute; left: 0; right: 0; top: 50%;
+  height: 1px; background: var(--border); opacity: 0.5;
+}
+.flip-digit.flipping {
+  animation: digitFlip 0.3s ease;
+}
+@keyframes digitFlip {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(0.85); }
+  100% { transform: scaleY(1); }
+}
+
+.clock-colon {
+  font-family: var(--heading-font); font-size: 2rem; font-weight: 700;
+  color: var(--flip-text); animation: blinkColon 1s step-end infinite;
+  transition: color 0.6s;
+}
+@keyframes blinkColon {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+.timer-set-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
+}
+.timer-set-row input {
+  width: 60px; padding: 8px; text-align: center; border-radius: 12px;
+  border: 1.5px solid var(--input-border); background: var(--input-bg);
+  color: var(--text-primary) !important; font-family: var(--body-font); font-size: 1rem;
+  transition: all 0.3s;
+  -webkit-text-fill-color: var(--text-primary);
+}
+.timer-set-row input::placeholder {
+  color: var(--text-secondary) !important;
+  -webkit-text-fill-color: var(--text-secondary);
+}
+.timer-set-row input:focus {
+  outline: none; border-color: var(--accent); box-shadow: 0 0 12px var(--glow);
+}
+.timer-set-row label { font-size: 0.8rem; color: var(--text-secondary); }
+
+.timer-controls {
+  display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+}
+.ctrl-btn {
+  padding: 12px 28px; border: none; border-radius: 16px;
+  background: var(--btn-bg); color: var(--btn-text);
+  font-family: var(--body-font); font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: all 0.3s;
+  box-shadow: 0 4px 15px var(--glow);
+}
+.ctrl-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px var(--glow); }
+.ctrl-btn:active { transform: translateY(0); }
+.ctrl-btn.set-btn { background: linear-gradient(135deg, var(--accent3), var(--accent2)); }
+
+@media (max-width: 600px) {
+  .flip-digit-wrap { width: 40px; height: 56px; }
+  .flip-digit { font-size: 1.5rem; }
+  .clock-colon { font-size: 1.5rem; }
+  .ctrl-btn { padding: 10px 18px; font-size: 0.85rem; }
+}
+@media (max-width: 400px) {
+  .flip-digit-wrap { width: 32px; height: 46px; }
+  .flip-digit { font-size: 1.2rem; }
+  .clock-colon { font-size: 1.2rem; }
+}

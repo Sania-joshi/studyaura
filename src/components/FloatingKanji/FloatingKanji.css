@@ -1,0 +1,26 @@
+.kanji-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.kanji-container.visible {
+  opacity: 1;
+}
+.kanji {
+  position: absolute;
+  bottom: -60px;
+  font-size: 1.8rem;
+  color: rgba(0, 212, 255, 0.12);
+  font-family: 'Orbitron', sans-serif;
+  animation: kanjiFloat 12s linear infinite;
+}
+@keyframes kanjiFloat {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}

@@ -1,0 +1,14 @@
+.celebration-overlay {
+  position: fixed; inset: 0; z-index: 9997; pointer-events: none;
+  opacity: 0; transition: opacity 0.3s;
+}
+.celebration-overlay.active { opacity: 1; }
+.pulse-ring {
+  position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+  border-radius: 50%; border: 3px solid var(--accent);
+  transform: translate(-50%, -50%);
+  animation: pulseRing 1s ease-out forwards;
+}
+@keyframes pulseRing {
+  to { width: 200vw; height: 200vw; opacity: 0; }
+}

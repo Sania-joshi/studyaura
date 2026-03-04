@@ -1,0 +1,27 @@
+.app-heading {
+  text-align: center; font-family: var(--heading-font);
+  font-size: clamp(1.3rem, 4vw, 2rem); margin-bottom: 8px;
+  background: var(--btn-bg); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+  filter: drop-shadow(0 0 10px var(--glow));
+  opacity: 0; transform: translateY(-30px);
+  transition: opacity 0.8s, transform 0.8s, font-family 0.3s;
+}
+.app-heading.revealed { opacity: 1; transform: translateY(0); }
+
+.date-time-bar {
+  text-align: center; margin-bottom: 36px;
+  font-family: var(--heading-font);
+  opacity: 0; transition: opacity 0.8s 0.2s;
+}
+.date-time-bar.revealed { opacity: 1; }
+.live-date {
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+  color: var(--text-secondary); margin-bottom: 4px;
+}
+.live-clock {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--accent);
+  text-shadow: 0 0 15px var(--glow);
+  letter-spacing: 4px;
+}

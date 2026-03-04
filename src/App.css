@@ -1,0 +1,24 @@
+.main-app {
+  position: relative; z-index: 2; max-width: 800px;
+  margin: 0 auto; padding: 100px 20px 120px;
+  opacity: 0; transition: opacity 0.5s;
+  width: 100%;
+}
+.main-app.visible { opacity: 1; }
+
+@media (max-width: 768px) {
+  .main-app { padding: 80px 16px 100px; }
+}
+@media (max-width: 480px) {
+  .main-app { padding: 70px 12px 90px; }
+}
+
+.scanline-overlay {
+  position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(0,0,0, var(--scanline-opacity)) 2px,
+    rgba(0,0,0, var(--scanline-opacity)) 4px
+  );
+  transition: opacity 0.6s;
+}
