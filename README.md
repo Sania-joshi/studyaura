@@ -373,5 +373,4 @@ Firebase Help: https://firebase.google.com/docs
 **Built with ❤️ in React + Vite**
 
 ✨ **Happy studying, and may your grades shine as bright as our themes!** ⚡
-#   s t u d y a u r a  
- 
+#
